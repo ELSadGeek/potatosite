@@ -32,21 +32,22 @@ Clear-Host
 
 #Enable PS scripts
 
-Set-ExecutionPolicy Unrestricted -Scopes CurrentUser -Force
+Set-ExecutionPolicy Unrestricted -Scope CurrentUser -Force
 
 
 #Install deps
 
-Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://community.chocolatey.org/install.ps1'))
+[System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://community.chocolatey.org/install.ps1'))
+choco feature enable -n allowGlobalConfirmation
+choco feature enable -n allowEmptyChecksums
 choco upgrade all
-choco install wget git -y
+choco install wget git -y --ignore-checksums
 
 
 #Download potato loader
 
 wget.exe http://sysmti.com.mx/TI/load_potato.ps1
-git clone https://github.com/ELSadGeek/potatosite.git
-git clone https://github.com/0x6d69636b/windows_hardening.git
+
 
 #Task Schedule
 
@@ -78,8 +79,8 @@ $UserId = "TI"
 # Set the task principal's user ID and run level.
 $taskPrincipal = New-ScheduledTaskPrincipal -UserId $UserId -RunLevel Highest 
 # Set the task compatibility value to Windows 10.
-$taskSettings = New-ScheduledTaskSettingsSet -Compatibility Win8 -Priority Highest -AsJob -
+$taskSettings = New-ScheduledTaskSettingsSet -Compatibility Win8
 # Update the task principal settings
 Set-ScheduledTask -TaskName $taskName -Principal $taskPrincipal -Settings $taskSettings
 
-# Restart-Computer
+Restart-Computer
