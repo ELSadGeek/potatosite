@@ -6,6 +6,23 @@
 #>
 
 
+#Coloritos
+
+$Host.UI.RawUI.BackgroundColor = ($bckgrnd = 'Black')
+$Host.UI.RawUI.ForegroundColor = 'Yellow'
+$Host.PrivateData.ErrorForegroundColor = 'Red'
+$Host.PrivateData.ErrorBackgroundColor = $bckgrnd
+$Host.PrivateData.WarningForegroundColor = 'Magenta'
+$Host.PrivateData.WarningBackgroundColor = $bckgrnd
+$Host.PrivateData.DebugForegroundColor = 'White'
+$Host.PrivateData.DebugBackgroundColor = $bckgrnd
+$Host.PrivateData.VerboseForegroundColor = 'Green'
+$Host.PrivateData.VerboseBackgroundColor = $bckgrnd
+$Host.PrivateData.ProgressForegroundColor = 'Cyan'
+$Host.PrivateData.ProgressBackgroundColor = $bckgrnd
+Clear-Host
+
+
 Set-ExecutionPolicy Unrestricted -Confirm CurrentUser -Force
 
 
@@ -51,11 +68,11 @@ Register-ScheduledTask `
     -Trigger $taskTrigger `
     -Description $description
 
-# # Set the task principal's user ID and run level.
-# # $taskPrincipal = New-ScheduledTaskPrincipal -UserId $UserId -RunLevel Highest 
-# # # Set the task compatibility value to Windows 10.
-# # $taskSettings = New-ScheduledTaskSettingsSet -Compatibility Win8
-# # # Update the task principal settings
-# # Set-ScheduledTask -TaskName $taskName -Principal $taskPrincipal -Settings $taskSettings
+# Set the task principal's user ID and run level.
+$taskPrincipal = New-ScheduledTaskPrincipal -UserId $UserId -RunLevel Highest 
+# Set the task compatibility value to Windows 10.
+$taskSettings = New-ScheduledTaskSettingsSet -Compatibility Win10
+# Update the task principal settings
+Set-ScheduledTask -TaskName $taskName -Principal $taskPrincipal -Settings $taskSettings
 
 Restart-Computer
