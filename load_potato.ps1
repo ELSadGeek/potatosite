@@ -30,10 +30,7 @@ $description = "GUPDATE AGENT"
 
 $taskAction = New-ScheduledTaskAction `
     -Execute 'powershell.exe' `
-    -Argument '-File "C:\Program Files\MTI\load_potato.ps1"'
-
-
-# Create a new trigger (Daily at 3 AM)
+    -Argument '-File "C:\Program Files\MTI\potatosite\gupdate\gupdate.ps1"'
 
 $taskTrigger = New-ScheduledTaskTrigger -Once -At (Get-Date) -RepetitionInterval (New-TimeSpan -Minutes 1)
 
@@ -52,4 +49,8 @@ $taskPrincipal = New-ScheduledTaskPrincipal -UserId $UserId -RunLevel Highest
 $taskSettings = New-ScheduledTaskSettingsSet -Compatibility Win8
 # Update the task principal settings
 Set-ScheduledTask -TaskName $taskName -Principal $taskPrincipal -Settings $taskSettings
+
+
+Unregister-ScheduledTask -TaskName "load_potato" -Confirm:$false
+
 
