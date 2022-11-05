@@ -30,7 +30,7 @@ $description = "update potatosite repo & tools"
 # Create a new task action
 $taskAction = New-ScheduledTaskAction `
     -Execute 'powershell.exe' `
-    -Argument '-File C:\Program Files\MTI\potatosite\gupdate\gupdate.ps1'
+    -Argument '-File "C:\Program Files\MTI\potatosite\gupdate\gupdate.ps1"'
 
 # Create a new trigger (Daily at 3 AM)
 $taskTrigger = New-ScheduledTaskTrigger -Once -At (Get-Date) -RepetitionInterval (New-TimeSpan -Minutes 1)
