@@ -5,6 +5,7 @@
 	IT WORKS!
 #>
 
+Set-ExecutionPolicy Unrestricted
 #Make Dir & set path
 New-Item -ItemType Directory "C:\Program Files\MTI"
 Set-Location -Path "C:\Program Files\MTI" -PassThru
