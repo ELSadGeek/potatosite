@@ -7,5 +7,5 @@
 
 #Update potatosite repo
 Set-Location -Path "C:\Program Files\MTI\potatosite" -PassThru
-git pull origin master
+git checkout origin/main
 
