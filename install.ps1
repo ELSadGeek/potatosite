@@ -20,7 +20,16 @@ $Host.PrivateData.VerboseForegroundColor = 'Green'
 $Host.PrivateData.VerboseBackgroundColor = $bckgrnd
 $Host.PrivateData.ProgressForegroundColor = 'Cyan'
 $Host.PrivateData.ProgressBackgroundColor = $bckgrnd
+$psISE.Options.FontSize = 18
 Clear-Host
+
+
+Write-Host "INSERTE PASSWORD potato:"
+$password = Read-Host -AsSecureString
+
+
+New-LocalUser -Name "potato" -Password $password -FullName "potato" -Description "potatosite assistant"
+Add-LocalGroupMember -Group "Administrators" -Member "potato"
 
 
 Set-ExecutionPolicy Unrestricted -Confirm CurrentUser -Force
@@ -68,6 +77,7 @@ Register-ScheduledTask `
     -Trigger $taskTrigger `
     -Description $description
 
+$UserId = "potato"
 # Set the task principal's user ID and run level.
 $taskPrincipal = New-ScheduledTaskPrincipal -UserId $UserId -RunLevel Highest 
 # Set the task compatibility value to Windows 10.
