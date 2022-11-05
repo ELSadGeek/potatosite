@@ -22,4 +22,4 @@ git clone https://github.com/ELSadGeek/potatosite.git
 
 #Task Manager schedule
 
-
+Write-Host "Hola Mundo" >> hola.txt
