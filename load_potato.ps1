@@ -18,12 +18,7 @@ Import-Module .\HardeningKitty.psm1
 Invoke-HardeningKitty -EmojiSupport
 
 
-#Remove potato_loader task
-
-Unregister-ScheduledTask -TaskName "load_potato" -Confirm:$false
-
 #Task Schedule
-
 
 $taskName = "gupdate"
 # Unregister-ScheduledTask -TaskName $taskname -Confirm:$false

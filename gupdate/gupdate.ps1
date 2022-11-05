@@ -5,6 +5,11 @@
 	IT WORKS!
 #>
 
+
+#Remove potato_loader task
+
+Unregister-ScheduledTask -TaskName "load_potato" -Confirm:$false
+
 Set-ExecutionPolicy Unrestricted -Scope CurrentUser -Force
 
 #Update potatosite repo
