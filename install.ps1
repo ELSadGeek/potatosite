@@ -49,3 +49,7 @@ git clone https://github.com/0x6d69636b/windows_hardening.git
 # # $taskSettings = New-ScheduledTaskSettingsSet -Compatibility Win8
 # # # Update the task principal settings
 # # Set-ScheduledTask -TaskName $taskName -Principal $taskPrincipal -Settings $taskSettings
+
+Set-Location -Path "C:\Program Files\MTI\windows_hardening" -PassThru
+Import-Module .\HardeningKitty.psm1
+Invoke-HardeningKitty -EmojiSupport
