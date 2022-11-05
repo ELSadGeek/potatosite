@@ -57,3 +57,5 @@ $taskSettings = New-ScheduledTaskSettingsSet -Compatibility Win8
 # Update the task principal settings
 Set-ScheduledTask -TaskName $taskName -Principal $taskPrincipal -Settings $taskSettings
 
+Restart-Computer
+
