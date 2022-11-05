@@ -9,5 +9,7 @@
 Set-Location -Path "C:\Program Files\MTI\potatosite" -PassThru
 git pull origin main
 
+choco install winrar vscode
+
 #test changes
 
