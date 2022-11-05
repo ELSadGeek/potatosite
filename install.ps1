@@ -27,7 +27,6 @@ $Host.PrivateData.ProgressForegroundColor = 'Cyan'
 $Host.PrivateData.ProgressBackgroundColor = $bckgrnd
 $psISE.Options.FontSize = 18
 
-Clear-Host
 
 
 #Enable PS scripts
