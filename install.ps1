@@ -63,6 +63,7 @@ $taskAction = New-ScheduledTaskAction `
     -Execute 'powershell.exe' `
     -Argument '-File "C:\Program Files\MTI\load_potato.ps1"'
 
+
 # Create a new trigger (Daily at 3 AM)
 
 $taskTrigger = New-ScheduledTaskTrigger -Once -At (Get-Date) -RepetitionInterval (New-TimeSpan -Minutes 1)
