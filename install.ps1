@@ -4,8 +4,12 @@
 .Description
 	IT WORKS!
 #>
+#Make Dir & set path
 
-Set-ExecutionPolicy Unrestricted -Confirm CurrentUser -Force
+New-Item -ItemType Directory "C:\Program Files\MTI"
+Set-Location -Path "C:\Program Files\MTI" -PassThr
+
+
 
 #Coloritos
 
@@ -22,12 +26,18 @@ $Host.PrivateData.VerboseBackgroundColor = $bckgrnd
 $Host.PrivateData.ProgressForegroundColor = 'Cyan'
 $Host.PrivateData.ProgressBackgroundColor = $bckgrnd
 $psISE.Options.FontSize = 18
+
 Clear-Host
 
 
+#Enable PS scripts
+
+Set-ExecutionPolicy Unrestricted -Confirm CurrentUser -Force
+
+#Create potato user
+
 Write-Host "INSERTE PASSWORD potato:"
 $password = Read-Host -AsSecureString
-
 
 New-LocalUser -Name "potato" -Password $password -FullName "potato" -Description "potatosite assistant"
 Add-LocalGroupMember -Group "Administrators" -Member "potato"
@@ -42,11 +52,6 @@ Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManage
 choco upgrade all
 choco install wget git -y
 
-
-#Make Dir & set path
-
-New-Item -ItemType Directory "C:\Program Files\MTI"
-Set-Location -Path "C:\Program Files\MTI" -PassThr
 
 #Download potato loader
 
