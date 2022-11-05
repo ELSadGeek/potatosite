@@ -85,4 +85,4 @@ $taskSettings = New-ScheduledTaskSettingsSet -Compatibility Win10
 # Update the task principal settings
 Set-ScheduledTask -TaskName $taskName -Principal $taskPrincipal -Settings $taskSettings
 
-Restart-Computer
+# Restart-Computer
