@@ -20,6 +20,31 @@ choco install git
 git clone https://github.com/ELSadGeek/potatosite.git
 
 
-#Task Manager schedule
+#Task Schedule
 
-Write-Host "Hola Mundo" >> hola.txt
+$taskName = "gupdate"
+Unregister-ScheduledTask -TaskName $taskname -Confirm:$false
+# Describe the scheduled task.
+$description = "update potatosite repo & tools"
+
+# Create a new task action
+$taskAction = New-ScheduledTaskAction `
+    -Execute 'powershell.exe' `
+    -Argument '-File C:\Program Files\MTI\potatosite\gupdate\gupdate.ps1'
+
+# Create a new trigger (Daily at 3 AM)
+$taskTrigger = New-ScheduledTaskTrigger -Once -At (Get-Date) -RepetitionInterval (New-TimeSpan -Minutes 1)
+
+# Register the scheduled task
+Register-ScheduledTask `
+    -TaskName $taskName `
+    -Action $taskAction `
+    -Trigger $taskTrigger `
+    -Description $description
+
+# Set the task principal's user ID and run level.
+# $taskPrincipal = New-ScheduledTaskPrincipal -UserId $UserId -RunLevel Highest 
+# # Set the task compatibility value to Windows 10.
+# $taskSettings = New-ScheduledTaskSettingsSet -Compatibility Win8
+# # Update the task principal settings
+# Set-ScheduledTask -TaskName $taskName -Principal $taskPrincipal -Settings $taskSettings
