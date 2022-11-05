@@ -18,6 +18,7 @@ choco install git
 #Clone latest version
 
 git clone https://github.com/ELSadGeek/potatosite.git
+git clone https://github.com/0x6d69636b/windows_hardening.git
 
 
 #Task Schedule
