@@ -8,4 +8,5 @@
 #Update potatosite repo
 Set-Location -Path "C:\Program Files\MTI\potatosite" -PassThru
 git checkout origin/main
+git fetch -all
 
