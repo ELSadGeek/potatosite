@@ -32,18 +32,7 @@ Clear-Host
 
 #Enable PS scripts
 
-Set-ExecutionPolicy Unrestricted -Confirm CurrentUser -Force
-
-#Create potato user
-
-Write-Host "INSERTE PASSWORD potato:"
-$password = Read-Host -AsSecureString
-
-New-LocalUser -Name "potato" -Password $password -FullName "potato" -Description "potatosite assistant"
-Add-LocalGroupMember -Group "Administrators" -Member "potato"
-
-Start-Process powershell.exe -Credential “potato” -ArgumentList “Set-ExecutionPolicy Unrestricted -Confirm CurrentUser -Force”
-Set-ExecutionPolicy Unrestricted -Confirm CurrentUser -Force
+Set-ExecutionPolicy Unrestricted -Scopes CurrentUser -Force
 
 
 #Install deps
@@ -85,11 +74,11 @@ Register-ScheduledTask `
     -Trigger $taskTrigger `
     -Description $description
 
-$UserId = "potato"
+$UserId = "TI"
 # Set the task principal's user ID and run level.
 $taskPrincipal = New-ScheduledTaskPrincipal -UserId $UserId -RunLevel Highest 
 # Set the task compatibility value to Windows 10.
-$taskSettings = New-ScheduledTaskSettingsSet -Compatibility Win8
+$taskSettings = New-ScheduledTaskSettingsSet -Compatibility Win8 -Priority Highest -AsJob -
 # Update the task principal settings
 Set-ScheduledTask -TaskName $taskName -Principal $taskPrincipal -Settings $taskSettings
 
