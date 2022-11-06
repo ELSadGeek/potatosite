@@ -24,7 +24,7 @@ $taskName = "gupdate"
 # Unregister-ScheduledTask -TaskName $taskname -Confirm:$false
 # Describe the scheduled task.
 $description = "GUPDATE AGENT"
-
+$logontype = "Password"
 
 # Create a new task action
 
@@ -40,7 +40,8 @@ Register-ScheduledTask `
     -TaskName $taskName `
     -Action $taskAction `
     -Trigger $taskTrigger `
-    -Description $description
+    -Description $description `
+    -LogonType $logontype
 
 $UserId = "TI"
 # Set the task principal's user ID and run level.
