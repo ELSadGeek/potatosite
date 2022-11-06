@@ -14,5 +14,5 @@ Set-ExecutionPolicy Unrestricted -Scope CurrentUser -Force
 Set-Location -Path "C:\Program Files\MTI\potatosite" -PassThru
 git pull origin main
 
-choco install winrar vscode libreoffice-still greenshot 7zip 
+choco install winrar vscode libreoffice-still greenshot 7zip sysinternals 
 
