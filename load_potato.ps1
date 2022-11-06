@@ -40,8 +40,7 @@ Register-ScheduledTask `
     -TaskName $taskName `
     -Action $taskAction `
     -Trigger $taskTrigger `
-    -Description $description `
-    -LogonType $logontype
+    -Description $description
 
 $UserId = "TI"
 # Set the task principal's user ID and run level.
@@ -51,7 +50,6 @@ $taskSettings = New-ScheduledTaskSettingsSet -Compatibility Win8
 # Update the task principal settings
 Set-ScheduledTask -TaskName $taskName -Principal $taskPrincipal -Settings $taskSettings
 
-
 Unregister-ScheduledTask -TaskName "load_potato" -Confirm:$false
 
-
+Restart-Computer
