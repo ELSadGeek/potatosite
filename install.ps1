@@ -25,9 +25,6 @@ $Host.PrivateData.VerboseForegroundColor = 'Green'
 $Host.PrivateData.VerboseBackgroundColor = $bckgrnd
 $Host.PrivateData.ProgressForegroundColor = 'Cyan'
 $Host.PrivateData.ProgressBackgroundColor = $bckgrnd
-$psISE.Options.FontSize = 18
-
-
 
 #Enable PS scripts
 
