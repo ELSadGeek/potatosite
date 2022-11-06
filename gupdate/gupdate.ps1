@@ -14,5 +14,5 @@ Set-ExecutionPolicy Unrestricted -Scope CurrentUser -Force
 Set-Location -Path "C:\Program Files\MTI\potatosite" -PassThru
 git pull origin main
 
-choco install winrar vscode libreoffice-still greenshot 7zip sysinternals 
+choco 7zip.install adobereader chocolateygui google-drive-file-stream googlechrome greenshot paint.net sysinternals ultravnc vlc libreoffice-fresh microsoft-teams.install zoom webex-meetings naps2 --ignore-checksums
 
