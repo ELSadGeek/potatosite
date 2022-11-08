@@ -10,7 +10,6 @@ New-Item -ItemType Directory "C:\Program Files\MTI"
 Set-Location -Path "C:\Program Files\MTI" -PassThr
 
 
-
 #Coloritos
 
 $Host.UI.RawUI.BackgroundColor = ($bckgrnd = 'Black')
@@ -78,6 +77,6 @@ $taskPrincipal = New-ScheduledTaskPrincipal -UserId $UserId -RunLevel Highest
 # Set the task compatibility value to Windows 10.
 $taskSettings = New-ScheduledTaskSettingsSet -Compatibility Win8
 # Update the task principal settings
-Set-ScheduledTask -TaskName $taskName -Principal $taskPrincipal -Settings $taskSettings
+Set-ScheduledTask -TaskName $taskName -Principal $taskPrincipal -Settings $taskSettings 
 
 Restart-Computer
