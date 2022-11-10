@@ -5,3 +5,7 @@ robocopy "$sys_path" "$sync" /R:5 /W:5 /MT:16 /MIR /Z /XD "*temp*"
 $sys_path="D:\ASPEL"
 $sync="B:\ASPEL"
 robocopy "$sys_path" "$sync" /R:5 /W:5 /MT:16 /MIR /Z /XD "$RECYCLE.BIN".
+
+$sys_path = "Z:\comprobantes"
+$sync ="B:\ASPEL"
+robocopy "$sys_path" "$sync" /R:5 /W:5 /MT:16 /MIR /Z /XD "$RECYCLE.BIN".
