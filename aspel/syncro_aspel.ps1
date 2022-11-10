@@ -1,9 +1,9 @@
-$omit= '$RECYCLE.BIN'
 
 $ignores = @(
-    $omit + '*temp*',
-    $omit + '*.ctl'
-
+    '$RECYCLE.BIN',
+    '*temp*',
+    '*.ctl',
+    '.thumbs'
 )
 
 $sys_path='C:\Program Files (x86)\Common Files\Aspel'
