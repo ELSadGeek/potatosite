@@ -1,6 +1,14 @@
+$omit= '$RECYCLE.BIN'
+
+$ignores = @(
+    $omit + '*temp*',
+    $omit + '*.ctl'
+
+)
+
 $sys_path='C:\Program Files (x86)\Common Files\Aspel'
 $sync='D:\ASPEL\dacaspel'
-robocopy "$sys_path" "$sync" /R:5 /W:5 /MT:16 /MIR /Z /XD "*.ctl"
+robocopy "$sys_path" "$sync" /R:5 /W:5 /MT:16 /MIR /Z /XD $ignores
 
 # $sys_path = "Z:\comprobantes"
 # $sync ="G:\Unidades compartidas\COMPROBANTES"
