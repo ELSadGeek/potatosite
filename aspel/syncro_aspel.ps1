@@ -17,13 +17,14 @@ robocopy "$sys_path" "$sync" /R:5 /W:5 /MT:16 /MIR /Z /XF $XF XD/ $XD
 # $sync ="G:\Unidades compartidas\COMPROBANTES"
 # robocopy "$sys_path" "$sync" /R:5 /W:5 /MT:16 /MIR /Z /XF $XF XD/ $XD
 
-$sys_path="D:\ASPEL"
-$sync="B:\ASPEL"
-robocopy "$sys_path" "$sync" /R:5 /W:5 /MT:16 /MIR /Z /XF $XF XD/ $XD
-
-
 $sys_path='Q:\sysmti'
 $sync='G:\Unidades compartidas\COMPROBANTES'
 robocopy "$sys_path" "$sync" /R:5 /W:5 /MT:16 /MIR /Z /XF $XF XD/ $XD
+
+
+# $sys_path="D:\ASPEL"
+# $sync="B:\ASPEL"
+# robocopy "$sys_path" "$sync" /R:5 /W:5 /MT:16 /MIR /Z /XF $XF XD/ $XD
+
 
 # filemon 5US*!qQcxunC8%5
