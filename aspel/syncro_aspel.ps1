@@ -10,7 +10,7 @@ $sys_path = "Z:\comprobantes"
 $sync ="G:\Unidades compartidas\COMPROBANTES"
 robocopy "$sys_path" "$sync" /R:5 /W:5 /MT:16 /MIR /Z /XD "$RECYCLE.BIN".
 
-$sys_path = "Z:\comprobantes"
+$sys_path = "D:\comprobantes"
 $sync ="B:\comprobantes"
 robocopy "$sys_path" "$sync" /R:5 /W:5 /MT:16 /MIR /Z /XD "$RECYCLE.BIN".
 
