@@ -23,7 +23,7 @@ robocopy "$sys_path" "$sync" /R:5 /W:5 /MT:16 /MIR /Z /XF $XF XD/ $XD
 
 
 $sys_path="Q:\sysmti"
-$sync="G:\'Unidades compartidas'\COMPROBANTES"
+$sync="D:\comprobantes"
 robocopy "$sys_path" "$sync" /R:5 /W:5 /MT:16 /MIR /Z /XF $XF XD/ $XD
 
 
