@@ -7,7 +7,7 @@ $XF = @(
 
 $XD = @(
     '$RECYCLE.BIN',
-    'System '
+    'System Volume Information'
 )
 
 $sys_path='C:\Program Files (x86)\Common Files\Aspel'
