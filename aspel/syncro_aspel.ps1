@@ -2,7 +2,8 @@
 $XF = @(
     '*temp*',
     '*.ctl',
-    '*.thumbs'
+    '*.thumbs',
+    '*.ffs_lock'
 )
 
 $XD = @(

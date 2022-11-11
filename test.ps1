@@ -29,3 +29,6 @@ for ($counter = 1; $counter -le 2; $counter++ )
 }
 
 
+# Ws1ynF^!323BlXf Admin.
+
+.powercfg /hibernate off
