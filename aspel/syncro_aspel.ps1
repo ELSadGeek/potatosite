@@ -6,24 +6,20 @@ $XF = @(
 )
 
 $XD = @(
-    '$RECYCLE.BIN'
+    '$RECYCLE.BIN',
+    'System '
 )
 
 $sys_path='C:\Program Files (x86)\Common Files\Aspel'
 $sync='D:\ASPEL\dacaspel'
 robocopy "$sys_path" "$sync" /R:5 /W:5 /MT:16 /MIR /Z /XF $XF XD/ $XD
 
-# $sys_path = "Z:\comprobantes"
-# $sync ="G:\Unidades compartidas\COMPROBANTES"
-# robocopy "$sys_path" "$sync" /R:5 /W:5 /MT:16 /MIR /Z /XF $XF XD/ $XD
-
-# $sys_path='\\172.16.3.217\comprobantes'
-# $sync="G:\Unidades compartidas\COMPROBANTES"
-# robocopy "$sys_path" "$sync" /R:5 /W:5 /MT:16 /MIR /Z /XF $XF XD/ $XD
-
-
 $sys_path="Q:\sysmti"
 $sync="D:\comprobantes"
+robocopy "$sys_path" "$sync" /R:5 /W:5 /MT:16 /MIR /Z /XF $XF XD/ $XD
+
+$sys_path="D:\ASPEL"
+$sync="B:\ASPEL"
 robocopy "$sys_path" "$sync" /R:5 /W:5 /MT:16 /MIR /Z /XF $XF XD/ $XD
 
 
