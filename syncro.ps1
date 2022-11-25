@@ -27,10 +27,6 @@ $sys_path='C:\sysamaya\comprobantes'
 $sync='D:\comprobantes\sysamaya'
 robocopy "$sys_path" "$sync" /R:5 /W:5 /MT:16 /MIR /Z /XD "System Volume Information" "$RECYCLE.BIN"
 
-$sys_path="D:\comprobantes\sysmti"
-$sync="Q:\"
-robocopy "$sys_path" "$sync" /R:5 /W:5 /MT:16 /MIR /Z /XD "System Volume Information" "$RECYCLE.BIN"
-
 $sys_path="D:"
 $sync="B:\RDS\"
 robocopy "$sys_path" "$sync" /R:5 /W:5 /MT:16 /MIR /Z /XD "System Volume Information" "$RECYCLE.BIN"

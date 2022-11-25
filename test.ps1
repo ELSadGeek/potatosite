@@ -32,3 +32,9 @@ for ($counter = 1; $counter -le 2; $counter++ )
 # Ws1ynF^!323BlXf Admin.
 
 .powercfg /hibernate off
+
+
+Start-Process powershell.exe -Verb RunAs
+
+Resolve-DnsName -Name huc.mx -Type NS | Format-Table -auto
+
