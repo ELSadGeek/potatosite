@@ -68,7 +68,7 @@ Write-Output "------------------------------------------------------------------
     SINCRONIZANDO CON UBICACION REMOTA
 -------------------------------------------------------------------------------"
 
-robocopy "D:\" "\\172.16.3.250\backup\DC1" /R:5 /W:5 /MT:16 /MIR /Z /XD "System Volume Information" "$RECYCLE.BIN"
+robocopy "D:\packup" "\\172.16.3.250\Tlalnepantla\RDS\packup" /R:5 /W:5 /MT:16 /MIR /Z /XD "System Volume Information" "$RECYCLE.BIN"
 
 Write-Output "-------------------------------------------------------------------------------
     TERMINADO
@@ -76,22 +76,22 @@ Write-Output "------------------------------------------------------------------
 
 Stop-Transcript
 
-# Variables Mail 
-$smtp_password = ConvertTo-SecureString '#5@vH#]*q5V]' -AsPlainText -Force
-$smtp_credential = New-Object System.Management.Automation.PSCredential ('bot@sysmti.com.mx', $smtp_password)
-$From = new-object System.Net.Mail.MailAddress("bot@sysmti.com.mx", "BKP")
-$To = "jfernandez@mtinter.com.mx"
-$Cc = "jfernandez@mtinter.com.mx"
-# $Attachment = @(".\logs\$Env:Computername\$scp_name$snap_time.txt","E:\backup\dc1\$scp_name\$snap_time.txt")
-$Attachment = "D:/bkp/logs/$ID$t.txt"
-$Subject = "BKP: $t $ID"
-$Body = "<h2>Respaldo de $t en $Env:Computername COMPLETADO.</h2><br>"
-# $Body += "IP = $ip"
-# $Body += "Sistema respaldado: $t<br>"
-$Body += "$sha $hash"
-$SMTPServer = "mail.sysmti.com.mx"
-$SMTPPort = "587"
+# # Variables Mail 
+# $smtp_password = ConvertTo-SecureString '#5@vH#]*q5V]' -AsPlainText -Force
+# $smtp_credential = New-Object System.Management.Automation.PSCredential ('bot@sysmti.com.mx', $smtp_password)
+# $From = new-object System.Net.Mail.MailAddress("bot@sysmti.com.mx", "BKP")
+# $To = "jfernandez@mtinter.com.mx"
+# $Cc = "jfernandez@mtinter.com.mx"
+# # $Attachment = @(".\logs\$Env:Computername\$scp_name$snap_time.txt","E:\backup\dc1\$scp_name\$snap_time.txt")
+# $Attachment = "D:/bkp/logs/$ID$t.txt"
+# $Subject = "BKP: $t $ID"
+# $Body = "<h2>Respaldo de $t en $Env:Computername COMPLETADO.</h2><br>"
+# # $Body += "IP = $ip"
+# # $Body += "Sistema respaldado: $t<br>"
+# $Body += "$sha $hash"
+# $SMTPServer = "mail.sysmti.com.mx"
+# $SMTPPort = "587"
     
-Send-MailMessage -From $From -to $To -Cc $Cc -Subject $Subject -BodyAsHtml $Body -SmtpServer $SMTPServer -port $SMTPPort -UseSsl -Credential $smtp_credential -Attachments $Attachment -DeliveryNotificationOption OnSuccess
+# Send-MailMessage -From $From -to $To -Cc $Cc -Subject $Subject -BodyAsHtml $Body -SmtpServer $SMTPServer -port $SMTPPort -UseSsl -Credential $smtp_credential -Attachments $Attachment -DeliveryNotificationOption OnSuccess
 
 
