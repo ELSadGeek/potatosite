@@ -31,4 +31,4 @@ $sys_path="D:"
 $sync="B:\RDS\"
 robocopy "$sys_path" "$sync" /R:5 /W:5 /MT:16 /MIR /Z /XD "System Volume Information" "$RECYCLE.BIN"
 
-
+robocopy "D:\images" "\\172.16.3.250\Tlalnepantla\RDS\images" /R:5 /W:5 /MT:16 /MIR /Z /XD "System Volume Information" "$RECYCLE.BIN"
