@@ -68,7 +68,7 @@ Write-Output "------------------------------------------------------------------
     SINCRONIZANDO CON UBICACION REMOTA
 -------------------------------------------------------------------------------"
 
-robocopy "D:\packup" "\\172.16.3.250\Tlalnepantla\RDS\packup" /R:5 /W:5 /MT:16 /MIR /Z /XD "System Volume Information" "$RECYCLE.BIN"
+robocopy "D:\pakup" "\\172.16.3.250\Tlalnepantla\RDS\packup" /R:5 /W:5 /MT:16 /MIR /Z /XD "System Volume Information" "$RECYCLE.BIN"
 
 Write-Output "-------------------------------------------------------------------------------
     TERMINADO
