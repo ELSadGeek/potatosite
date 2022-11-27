@@ -18,7 +18,7 @@ Start-Transcript -Path "D:/pakup/logs/$ID$t.txt"
 # Disable-NetAdapter -Name "LAN" -Confirm:$false
 
 
-$sys_path = "D:\systemas\$t"
+$sys_path = "C:\$t"
 $SNAP = "D:\pakup\$t\SNAP"
 $SYNC = "D:\pakup\$t\SYNC"
 
