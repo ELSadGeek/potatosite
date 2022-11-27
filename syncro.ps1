@@ -11,8 +11,8 @@ $sys_path="C:\sysmerc\"
 $sync="D:\systemas\sysmerc\"
 robocopy "$sys_path" "$sync" /R:5 /W:5 /MT:16 /MIR /Z /XD "*temp*"
 
-$sys_path="C:\sysmti\"
-$sync="D:\systemas\sysmti\"
+$sys_path="C:\sysamaya\"
+$sync="D:\systemas\sysamaya\"
 robocopy "$sys_path" "$sync" /R:5 /W:5 /MT:16 /MIR /Z /XD "*temp*"
 
 $sys_path='C:\sysmti\comprobantes'
