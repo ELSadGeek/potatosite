@@ -71,7 +71,7 @@ Register-ScheduledTask `
     -Trigger $taskTrigger `
     -Description $description
 
-$UserId = "TI"
+$UserId = "IT"
 # Set the task principal's user ID and run level.
 $taskPrincipal = New-ScheduledTaskPrincipal -UserId $UserId -RunLevel Highest 
 # Set the task compatibility value to Windows 10.
