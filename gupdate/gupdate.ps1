@@ -14,7 +14,7 @@ Set-ExecutionPolicy Unrestricted -Scope CurrentUser -Force
 Set-Location -Path "C:\Program Files\MTI\potatosite" -PassThru
 git fetch
 git pull origin main
-choco install libreoffice-still 7zip paint.net
+choco install libreoffice-still 7zip paint.net adobereader -y
 
 
 
