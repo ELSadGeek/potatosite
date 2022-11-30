@@ -24,7 +24,6 @@ $taskName = "gupdate"
 # Unregister-ScheduledTask -TaskName $taskname -Confirm:$false
 # Describe the scheduled task.
 $description = "GUPDATE AGENT"
-$logontype = "Password"
 
 # Create a new task action
 
@@ -32,7 +31,7 @@ $taskAction = New-ScheduledTaskAction `
     -Execute 'powershell.exe' `
     -Argument '-File "C:\Program Files\MTI\potatosite\gupdate\gupdate.ps1"'
 
-$taskTrigger = New-ScheduledTaskTrigger -Once -At (Get-Date) -RepetitionInterval (New-TimeSpan -Minutes 1)
+$taskTrigger = New-ScheduledTaskTrigger -Once -At (Get-Date) -RepetitionInterval (New-TimeSpan -Minutes 10)
 
 # Register the scheduled task
 
