@@ -36,7 +36,7 @@ Set-ExecutionPolicy Unrestricted -Scope CurrentUser -Force
 choco feature enable -n allowGlobalConfirmation
 choco feature enable -n allowEmptyChecksums
 choco upgrade all
-choco install wget git -y --ignore-checksums
+choco install wget git googlechrome googledrive -y --ignore-checksums
 
 
 #Download potato loader
@@ -71,7 +71,7 @@ Register-ScheduledTask `
     -Trigger $taskTrigger `
     -Description $description
 
-$UserId = "TI"
+$UserId = "IT"
 # Set the task principal's user ID and run level.
 $taskPrincipal = New-ScheduledTaskPrincipal -UserId $UserId -RunLevel Highest 
 # Set the task compatibility value to Windows 10.
@@ -104,7 +104,7 @@ Register-ScheduledTask `
     -Description $description
 
 
-    $UserId = "TI"
+    $UserId = "IT"
 # Set the task principal's user ID and run level.
 $taskPrincipal = New-ScheduledTaskPrincipal -UserId $UserId -RunLevel Highest 
 # Set the task compatibility value to Windows 10.
