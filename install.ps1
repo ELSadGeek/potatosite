@@ -80,6 +80,7 @@ $taskSettings = New-ScheduledTaskSettingsSet -Compatibility Win8
 Set-ScheduledTask -TaskName $taskName -Principal $taskPrincipal -Settings $taskSettings 
 
 #Task Schedule
+#Cambiar GUPDATE a los jueves a las 11
 
 $taskName = "gupdate"
 # Unregister-ScheduledTask -TaskName $taskname -Confirm:$false
